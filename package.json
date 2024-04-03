@@ -1,0 +1,17 @@
+{
+  "name": "ts-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "headed_chromium_all": "playwright test --project chromium --headed --reporter html",
+    "docker:run": "playwright test --project chromium --reporter html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.30"
+  }
+}

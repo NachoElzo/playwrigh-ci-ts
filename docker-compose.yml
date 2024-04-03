@@ -1,0 +1,18 @@
+# last version
+version: '3.8'
+services:
+  # any service name
+  playwright-test:
+    # image name
+    image: playwright-test
+    build:
+      # will build in the root .
+      context: .
+      # will get the context from the dockerfile
+      dockerfile: ./Dockerfile
+      # npm scrip command to be executed
+    command: npm run docker:run
+    # Will copy the test results from the image to you local
+    volumes:
+      - ./playwright-report/:/app/playwright-report
+      - ./testResults/:/app/testResults
