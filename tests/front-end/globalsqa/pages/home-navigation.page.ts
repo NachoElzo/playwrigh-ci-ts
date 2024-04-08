@@ -1,5 +1,5 @@
 import { Page, expect } from '@playwright/test'
-import url from '../../../../urls.ts'
+import url from '../../../utilities/urls'
 
 export default class HomePage {
     private readonly page: Page
