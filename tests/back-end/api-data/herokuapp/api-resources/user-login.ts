@@ -7,8 +7,8 @@ interface TokenResponse {
     username: string;
 }
 async function requestToken(): Promise<TokenResponse> {
-    let userName: string = `@User ${random.randomString()}`
-    let password: string = `@Pass1 ${random.randomString()}`
+    let userName: string = `@User${random.randomString()}`
+    let password: string = `@Pass1${random.randomString()}`
     const auth = {
         userName: userName,
         password: password
