@@ -1,6 +1,5 @@
 import { APIResponse, expect } from '@playwright/test'
 import apiUsers from '../api-structure/api-users'
-import { json } from 'stream/consumers';
 
 async function userCreation(userName, password) {
     const auth = {

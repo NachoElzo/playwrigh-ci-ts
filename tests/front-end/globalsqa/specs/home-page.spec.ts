@@ -1,6 +1,6 @@
 import { test } from '@playwright/test'
 import HomePage from '../pages/home-navigation.page.ts'
-import url from '../../../utilities/urls'
+import url from '../../../../global/urls'
 
 test.beforeEach('', async ({ page }) => {
     await page.goto(url.globalsqa)
