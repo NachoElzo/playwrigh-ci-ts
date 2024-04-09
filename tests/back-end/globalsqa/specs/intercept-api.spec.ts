@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import url from '../../utilities/urls'
+import url from '../../../utilities/urls'
 
 test.describe('Given a user that aborts styles calls in the home page', async () => {
     //for this type of request you need to import the context in the beforeeach (isolated instace of a browser)

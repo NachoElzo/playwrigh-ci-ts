@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
-import url from '../../utilities/urls'
-import tags from '../api-data/globalsqa/mock-home-tags.json'
+import url from '../../../utilities/urls'
+import tags from '../../api-data/globalsqa/mock-home-tags.json'
 
 test.describe('Given a user that mock the data of an api response', async () => {
     test('Then the user will be able to see the data modified in the ui', async ({ page }) => {

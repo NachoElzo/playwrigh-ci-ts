@@ -1,11 +1,18 @@
 import { test } from '@playwright/test'
-import userToken from '../common/login'
-// import userToken from '../api-structure/post-login'
+import userCommon from '../common/users-functions.ts'
+import random from '../../../../utilities/random'
+let userName: string = `@User${random.randomString()}`
+let password: string = `@Pass1${random.randomString()}`
 
 test.describe('Given a user that request a user token', () => {
     test('Then he will store the token', async ({ }) => {
-        const { userID, username } = await userToken.token()
-        console.log(`userID: ${userID}, username: ${username}`);
+        const { userID, username } = await userCommon.createUser(userName, password)
+        console.log(`The user id is: ${userID} \n The username is: ${username}`);
+        await userCommon.authorizeUser(userName, password)
+        console.log('Your user is authorized to use the API')
+        const token = await userCommon.createToken(userName, password)
+        console.log(`The user token is: ${token}`)
+
     })
 
 })
