@@ -7,8 +7,7 @@ async function postUser(body):
     return await context.post(`./Account/v1/User`,
         {
             data: body
-        }
-    )
+        })
 }
 
 async function getUserAuthorization(body):
@@ -17,8 +16,7 @@ async function getUserAuthorization(body):
     return await context.get(`./Account/v1/Authorized`,
         {
             data: body
-        }
-    )
+        })
 }
 
 async function postToken(body):
@@ -27,9 +25,12 @@ async function postToken(body):
     return await context.post(`./Account/v1/GenerateToken`,
         {
             data: body
-        }
-    )
+        })
 }
-
-
-export default { postUser, getUserAuthorization, postToken }
+async function deleteUser(userId, auth) {
+    const context = await request.newContext({ baseURL: url.demoqa });
+    return await context.delete(`./Account/v1/User/${userId}`, {
+        headers: { Authorization: auth }
+    });
+}
+export default { postUser, getUserAuthorization, postToken, deleteUser }
