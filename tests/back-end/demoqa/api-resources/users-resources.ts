@@ -1,8 +1,8 @@
 import { APIResponse, expect } from '@playwright/test'
 import apiUsers from '../api-structure/api-users'
 
-async function userCreation(userName, password) {
-    const auth = {
+async function userCreation(userName: string, password: string) {
+    const auth: object = {
         userName: userName,
         password: password
     }
@@ -15,7 +15,7 @@ async function userCreation(userName, password) {
 }
 
 
-async function userAuthorization(userName, password) {
+async function userAuthorization(userName: string, password: string) {
     const auth = {
         userName: userName,
         password: password
@@ -25,7 +25,7 @@ async function userAuthorization(userName, password) {
 }
 
 
-async function tokenCreation(userName, password) {
+async function tokenCreation(userName: string, password: string) {
     const auth = {
         userName: userName,
         password: password
@@ -37,7 +37,7 @@ async function tokenCreation(userName, password) {
     return token;
 }
 
-async function deletingUser(userId, token) {
+async function deletingUser(userId: string, token: string) {
     const auth = `Bearer ${token}`
     const request: APIResponse = await apiUsers.deleteUser(userId, auth)
     expect(request).toBeOK();

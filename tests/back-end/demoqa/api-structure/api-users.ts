@@ -1,7 +1,8 @@
 import { APIResponse, request } from "@playwright/test";
 import url from '../../../../global/urls'
 
-async function postUser(body):
+
+async function postUser(body: object):
     Promise<APIResponse> {
     const context = await request.newContext({ baseURL: url.demoqa });
     return await context.post(`./Account/v1/User`,
@@ -10,7 +11,7 @@ async function postUser(body):
         })
 }
 
-async function getUserAuthorization(body):
+async function getUserAuthorization(body: Object):
     Promise<APIResponse> {
     const context = await request.newContext({ baseURL: url.demoqa });
     return await context.get(`./Account/v1/Authorized`,
@@ -19,7 +20,7 @@ async function getUserAuthorization(body):
         })
 }
 
-async function postToken(body):
+async function postToken(body: object):
     Promise<APIResponse> {
     const context = await request.newContext({ baseURL: url.demoqa });
     return await context.post(`./Account/v1/GenerateToken`,
@@ -27,7 +28,7 @@ async function postToken(body):
             data: body
         })
 }
-async function deleteUser(userId, auth) {
+async function deleteUser(userId: string, auth: string) {
     const context = await request.newContext({ baseURL: url.demoqa });
     return await context.delete(`./Account/v1/User/${userId}`, {
         headers: { Authorization: auth }
