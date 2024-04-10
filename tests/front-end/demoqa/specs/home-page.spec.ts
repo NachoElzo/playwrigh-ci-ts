@@ -7,7 +7,6 @@ test.describe('Given a user that lands in the Home page', () => {
         await page.goto(url.uiDemoqa)
         const leftMenu = new LeftMenuIteration(page)
         await leftMenu.validatesLeftMenuSections()
-        // await leftMenu.clickElementSection()
         await page.pause()
     })
 })

@@ -8,13 +8,13 @@ export default class LeftMenuIteration {
     async validatesLeftMenuSections() {
         const sections = ['Text Box', 'Check Box', 'Radio Button', 'Web Tables', 'Buttons', 'Links', 'Broken Links - Images', 'Upload and Download', 'Dynamic Properties'];
         const leftMenu = this.page.locator('li.btn.btn-light');
-        for (let menu = 0; menu < sections.length; menu++) {
-            const menuText = await leftMenu.nth(menu).textContent();
-            if (menuText === sections[menu]) {
-                expect(menuText).toEqual(sections[menu]);
-                console.log(`Section item ${menu + 1} matches: ${menuText}`);
+        for (let section = 0; section < sections.length; section++) {
+            const menuText = await leftMenu.nth(section).textContent();
+            if (menuText === sections[section]) {
+                expect(menuText).toEqual(sections[section]);
+                console.log(`Section item ${section + 1} matches: ${menuText}`);
             } else {
-                console.log(`Section item ${menu + 1} does not match: ${menuText}`);
+                console.log(`Section item ${section + 1} does not match: ${menuText}`);
                 throw new Error(`Section ${menuText} is not on the list`)
             }
         }
