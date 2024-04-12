@@ -6,7 +6,7 @@ test.describe('Given a user that lands in the Home page', () => {
     test('Then he will validate left menu section names', async ({ page }) => {
         await page.goto(url.uiDemoqa)
         const leftMenu = new LeftMenuIteration(page)
-        await leftMenu.validatesLeftMenuSections()
-        await page.pause()
+        await leftMenu.validatesElementsCategory()
+        await leftMenu.validatesFormCategory()
     })
 })
