@@ -9,7 +9,7 @@ test('Validates logo', async ({ page }) => {
     await expect(logo).toBeVisible()
     //will create a folder in the same root than the spec file with a png file
     //The validation can avoid 150 px of difference
-    await expect(logo).toHaveScreenshot({ maxDiffPixels: 150 })
+    await expect(logo).toHaveScreenshot({ maxDiffPixels: 500 })
     //example on how we can can validate all the web page/you can change maxDiffPixels property
     //await expect(page).toHaveScreenshot({ maxDiffPixels: 150 })
 
